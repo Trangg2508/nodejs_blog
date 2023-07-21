@@ -1,51 +1,51 @@
-//////////////Nodemon//////////////////
+// ////////////Nodemon//////////////////
 // npm install nodemon --save-dev : use for develop progress but when the app run in real environment for user
 
 // Nodemon automatically restart app when file changes (similar virtually DOM in ReactJS)
 // instead of 'ctrl + C' and enter 'node index.js' into terminal to run again project if it has some change in file
-//--save-dev: just install for development environment for dev not in real when user/client use app
+// --save-dev: just install for development environment for dev not in real when user/client use app
 // add to script in package.json: "start": "nodemon index.js",
 // Finally the code to run program (enter into terminal) change from 'node index.js' to 'npm start'
 
 
-////////////////Morgan////////////////
-//npm i morgan --save-dev
-//Logger Http request-> see request send to node server
-//See detail Http request in terminal (morgan console.log in terminal)
+// //////////////Morgan////////////////
+// npm i morgan --save-dev
+// Logger Http request-> see request send to node server
+// See detail Http request in terminal (morgan console.log in terminal)
 
 
 
-//////////////Template engine/////////////////
-//npm install express-handlebars
-//---if not use template engine ``
-//then when we want to use code html to write web page (such as home page or contact page...) and design css
-//we have to use like this :
-//app.get('/', (req, res) => {res.render(`<h1 style="color: red;">Home page, hello world</h1>`);})
-//in some case there are many code lines, if you like above, it will be hardly to code, fix and maintanance
+// ////////////Template engine/////////////////
+// npm install express-handlebars
+// ---if not use template engine ``
+// then when we want to use code html to write web page (such as home page or contact page...) and design css
+// we have to use like this :
+// app.get('/', (req, res) => {res.render(`<h1 style="color: red;">Home page, hello world</h1>`);})
+// in some case there are many code lines, if you like above, it will be hardly to code, fix and maintanance
 // => So we use template engine (handlebars) to import file 'home' has code into like below:
-//app.get('/', (req, res) => { res.render('home'); })
+// app.get('/', (req, res) => { res.render('home'); })
 // which means: the route '/' navigate to 'home' page (or the route '/news' navigate to 'news' page) -> make code shorter and perfomance
 
 
 
-//////////////Static file/////////////////
-//Static file (file tĩnh): file image, file css
-//app.use(express.static(path.join(__dirname, "nameFolder")))
-//nameFolder is folder you save static file
+// ////////////Static file/////////////////
+// Static file (file tĩnh): file image, file css
+// app.use(express.static(path.join(__dirname, "nameFolder")))
+// nameFolder is folder you save static file
 
 
-//////////////Sass/////////////////
+// ////////////Sass/////////////////
 // npm install node-sass --save-dev
-//Add ("watch" : "node-sass --watch src/resources/scss --output src/public/css/app.css") into script of pakage.json
-//explain: use 'node-sass' compile file 'src/resources/scss/' into 'src/public/css/'. 
-//listen all change of all file in folder scss not only specific file in folder scss.
+// Add ("watch" : "node-sass --watch src/resources/scss --output src/public/css/app.css") into script of pakage.json
+// explain: use 'node-sass' compile file 'src/resources/scss/' into 'src/public/css/'. 
+// listen all change of all file in folder scss not only specific file in folder scss.
 // '--watch' is auto update code in app.css when code app.scss change
-//****notice: 
+// ****notice: 
 //    -open new terminal to run 'npm run watch'
 //    -we just create file .scss, after enter "npm run watch", it will compile and automatically create file.css
 //    -NEVER write code into file .css
-//then add '<link rel="stylesheet" href="/css/app.css">' to main.hbs to apply css into app
+// then add '<link rel="stylesheet" href="/css/app.css">' to main.hbs to apply css into app
 
 
-//////////////Boostrap/////////////////
+// ////////////Boostrap/////////////////
 // Download or use CDN (link into main.hbs)

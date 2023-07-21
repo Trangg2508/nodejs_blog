@@ -13,6 +13,14 @@ const path = require("path");
 app.use(express.static(path.join(__dirname, "public")))
 
 
+//middleware is already in express, call to use
+//urlencoded() send data to server by form
+//json() send data to server by fetch, axios, ...
+app.use(express.urlencoded({
+  extended: true
+}));
+app.use(express.json());
+
 //HTTP logger
 app.use(morgan('combined'));
 
@@ -22,6 +30,7 @@ app.engine(".hbs", handlebars.engine({
   extname: '.hbs'
 })); 
 app.set("view engine", ".hbs");
+
 //the path: E:\Nodejs\Blog\sr\resources\views
 app.set("views", path.join(__dirname, "resources", "views"));
 
@@ -33,11 +42,23 @@ app.set("views", path.join(__dirname, "resources", "views"));
 //page 'home' has route is '/'
 app.get('/', (req, res) => {
      res.render('home');
-})
+});
+
+app.get('/search', (req, res) => {
+  console.log(req.query);
+  res.render('search');
+});
+
+app.post('/search', (req, res) => {
+  //get- query parameter -> req.query
+  //post- form data -> req.body
+  console.log(req.body);
+  res.send('');
+});
 
 app.get('/news', (req, res) => {
   res.render('news');
-})
+});
 
 //IP adress: 127.0.0.1 -> localhost
 app.listen(port, () => {
