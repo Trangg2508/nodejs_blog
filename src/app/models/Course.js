@@ -10,4 +10,4 @@ const Course = new Schema({
 });
 
 module.exports = mongoose.model('Course', Course);
-//it will auto convert 'Course' to 'courses' in mongoDB (lowercase and add 's/es')
+//it will auto convert 'Course' to 'courses' in mongoDB (lowercase and add 's/es' at the end)
