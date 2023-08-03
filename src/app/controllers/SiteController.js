@@ -2,15 +2,23 @@ const Course = require('../models/Course');
 
 class SiteController {
     // method: [GET], access route '/'
-    index(req, res) {
-        Course.find().then((courses, err) => {
-            res.json(courses);
-        }).catch(() => { 
-            res.status(400).json({ error: 'ERROR!!!' }) 
-        });
+    // index(req, res, next) {
+    //     Course.find({})
+    //         .then(courses => res.render('home'), {
+    //             title: 'LIST',
+    //             courses
+    //         })
+    //         .catch(next)
 
-        // res.render('home');
-    }
+        
+    // }
+    index(req,res,next){ 
+        Course.find({}) .lean() 
+        .then( courses => {res.render('home',{
+            title: 'LIST COURSES',
+            courses: courses
+        }) }) 
+        .catch(next) }
 
     // [GET], route: /search
     search(req, res) {

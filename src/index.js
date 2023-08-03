@@ -46,9 +46,9 @@ app.set('view engine', '.hbs');
 app.set('views', path.join(__dirname, 'resources', 'views'));
 
 // Route init
-               route(app);
+route(app);
 
 //IP adress: 127.0.0.1 -> localhost
 app.listen(port, () => {
-    console.log(`Example app listening at http://localhost:${port}`);
+    console.log(`App listening at http://localhost:${port}`);
 });
