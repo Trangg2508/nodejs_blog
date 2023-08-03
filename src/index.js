@@ -9,6 +9,11 @@ const path = require('path');
 //require('./routes') is accessing folder routes
 const route = require('./routes');
 
+const db = require('./config/db');
+
+//Connect to DB
+db.connect();
+
 //handle static file
 //the path: E:\Nodejs\Blog\sr\public
 //we save static file in that route so we have to use below code into that path

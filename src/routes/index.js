@@ -6,7 +6,7 @@ const sitesRouter = require('./sites.route');
 function route(app) {
     app.use('/news', newsRouter);
 
-    app.use('/', sitesRouter);
+    app.use('/blog', sitesRouter);
 
     //*** Example for post method
     // app.post('/search', (req, res) => {
